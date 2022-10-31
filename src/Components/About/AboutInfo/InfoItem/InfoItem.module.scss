@@ -1,0 +1,50 @@
+.contactItems {
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+
+    img {
+      position: absolute;
+    }
+  }
+
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding-left: 25px;
+
+  }
+
+  .socialIcons {
+    display: grid;
+    background-color: #f7c35c;
+    padding-top: 3vw;
+
+    img {
+      width: 18px;
+      height: 18px;
+      margin: 20px;
+
+
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 30px;
+    font-size: 16px;
+    color: grey;
+    //padding-left: 3vw;
+  }
+
+
+@media(max-width: 600px){
+  .contactItems{
+    border-bottom: white solid 2px;
+    width: 250px;
+  }
+}
+

@@ -1,0 +1,103 @@
+//colors:
+$black: rgb(22,22,22);
+$yellow: rgb(241,201,23);
+$grey: rgb(176,176,176);
+$white: rgb(255,255,255);
+$backgroundMenu: url("../../assets/img/bg_4.jpg") center no-repeat;
+
+
+@mixin fontProp($fs, $fw, $ls, $c){
+  #{font-size}: $fs;
+  #{font-weight}: $fw;
+  #{letter-spacing}: $ls;
+  #{color}: $c;
+}
+
+%img{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  height:100%;
+  object-fit: cover;
+}
+
+
+
+.allMenu{
+  background: $backgroundMenu;
+  background-size: cover;
+  padding-bottom: 8vw;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding-top: 85px;
+  min-height: 100vh;
+  .allMenuImg{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 43vw;
+    img{
+      width: 100%;
+      @extend %img;
+    }
+  }
+  .allMenuMain{
+    padding-top: 5vw;
+    .mainNav{
+      margin: 0 3vw 4vw;
+      .menuNav{
+        color: $yellow;
+        border: $yellow 1px solid;
+        padding: 14px;
+        font-size: 18px;
+        &:hover{
+          color: $black;
+          background-color: $yellow;
+        }
+      }
+      .menuNavActiv{
+        color: $black;
+        background-color: $yellow;
+        border: $yellow 1px solid;
+        padding: 14px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media(max-width: 1060px){
+  .allMenu{
+    grid-template-columns: 40% 60%;
+    .allMenuImg{
+      width: 300px;
+    }
+    .allMenuMain{
+      .mainNav{
+        .menuNav{
+          padding: 10px;
+          font-size: 14px;
+        }
+        .menuNavActiv{
+          color: $black;
+          background-color: $yellow;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 760px){
+  .allMenu{
+    display: block;
+    .allMenuImg{
+      display: none;
+    }
+
+    .allMenuMain{
+      .main__nav{
+        padding: 5vw 0;
+      }
+    }
+  }
+}

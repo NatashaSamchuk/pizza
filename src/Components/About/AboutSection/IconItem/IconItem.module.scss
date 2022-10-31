@@ -1,0 +1,98 @@
+$yellow: rgb(241,201,23);
+.logoCard{
+  display: grid;
+  justify-items: center;
+  .logoItems{
+    width: 80px;
+    height: 80px;
+    border: 1px solid $yellow;
+    position: relative;
+    transition-duration: 1s;
+    img{
+      width: 50%;
+      position: absolute;
+      top: 17px;
+      left: 20px;
+      display: block;
+      transition-duration: 1s;
+    }
+  }
+
+  .logoItems:hover{
+    transform: rotate(45deg);
+    img{
+      transform: rotate(-45deg);
+    }
+  }
+  span{
+    color: $yellow;
+    font-size: 24px;
+    text-align: center;
+    display: block;
+    margin: 1vw 0;
+  }
+  p{
+    color: rgb(206, 206, 206);
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+
+@media(max-width: 1060px){
+  .logoCard{
+    .logoItems{
+      width: 70px;
+      height: 70px;
+      img{
+        width: 50%;
+        top: 14px;
+        left: 17px;
+      }
+    }
+    span{
+      font-size: 22px;
+    }
+    p{
+      font-size: 17px;
+    }
+  }
+}
+
+@media(max-width: 820px){
+  .logoCard{
+    .logoItems{
+      width: 50px;
+      height: 50px;
+      img{
+        top: 11px;
+        left: 12px;
+      }
+    }
+  }
+}
+
+@media(max-width: 760px){
+  .logoCard{
+    span{
+      font-size: 18px;
+    }
+    p{
+      font-size: 14px;
+    }
+  }
+}
+
+@media(max-width: 620px){
+  .logoCard{
+    .logoItems{
+      display: none;
+    }
+    span{
+      font-size: 20px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+}

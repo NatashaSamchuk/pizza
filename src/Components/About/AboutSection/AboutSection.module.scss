@@ -1,0 +1,74 @@
+.about{
+  width: 100%;
+  margin-top: 85px;
+  .aboutFoto{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: auto;
+  }
+  .fotoDown{
+    position: relative;
+    .containerFotoDown{
+      .fotoDownCard{
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 25vw;
+        background-color: black;
+        img{
+          position: absolute;
+          top:20%;
+          left:50%;
+          transform:translate(-50%,-40%);
+          object-fit: cover;
+          width: 100%;
+          display: block;
+          opacity: 40%;
+        }
+      }
+    }
+    .containerLogo{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 4.5vw;
+      padding: 0 20vw;
+      grid-template-columns:repeat(4, minmax(4.6vw, 1fr));
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-auto-flow: column;
+    }
+  }
+}
+
+@media(max-width: 1200px){
+  .about{
+    .fotoDown{
+      .containerLogo{
+        padding: 0 15vw;
+      }
+    }
+  }
+}
+
+@media(max-width: 1060px){
+  .about{
+    .fotoDown{
+      .containerLogo{
+        padding: 0 9vw;
+      }
+    }
+  }
+}
+
+
+@media(max-width: 760px){
+  .about{
+    .fotoDown{
+      .containerLogo{
+        padding: 0 4vw;
+      }
+    }
+  }
+}

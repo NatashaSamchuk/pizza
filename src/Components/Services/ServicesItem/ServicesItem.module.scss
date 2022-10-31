@@ -1,0 +1,50 @@
+ .servicesItem {
+      display: grid;
+      grid-template-rows: 115px auto;
+      row-gap: 45px;
+      justify-items: center;
+
+      .servicesImg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 115px;
+        height: 115px;
+        border: 2px solid rgba(0, 0, 0, 0.29);
+        transition-duration: 1s;
+
+        img {
+          width: 65px;
+          height: 65px;
+          transition-duration: 1s;
+        }
+      }
+      .servicesImg:hover{
+        transform: rotate(45deg);
+        img{
+          transform: rotate(-45deg);
+        }
+      }
+
+
+      .servicesDescription {
+        h3 {
+          font-family: 'Raleway', sans-serif;
+          text-transform: uppercase;
+          text-align: center;
+          white-space: nowrap;
+          font-size: 20px;
+          color: #000000;
+        }
+
+        p {
+          margin-top: 40px;
+          font-family: 'Raleway', sans-serif;
+          color: rgba(0, 0, 0, 0.5);
+          line-height: 30px;
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+
+    }

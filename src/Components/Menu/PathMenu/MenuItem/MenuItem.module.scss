@@ -1,0 +1,141 @@
+//colors:
+$yellow: rgb(241,201,23);
+$grey: rgb(176,176,176);
+$white: rgb(255,255,255);
+//$backgroundMenu: url("../../../../assets/bg_4.jpg") center no-repeat;
+//$backgroundMenu: url("../../assets/bg_4.jpg") center no-repeat;
+
+
+
+%img{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  height:100%;
+  object-fit: cover;
+}
+
+
+%button{
+  border: 1px solid $white;
+  background-color: transparent;
+  color: $white;
+  padding: 6px 8px;
+}
+
+%h3{
+  color: $white;
+  font-size: 18px;
+}
+
+%p{
+  font-size: 14px;
+  line-height: 1.7;
+  color: $grey;
+}
+
+
+.productItem{
+  width: 85%;
+  justify-self: center;
+  display: grid;
+  justify-items: center;
+  gap: 1vw;
+  .itemImg{
+    width: 15vw;
+    position: relative;
+    overflow: hidden;
+    height:15vw;
+    border-radius: 50%;
+    transition-duration: 1s;
+    img{
+      width: 100%;
+      @extend %img;
+    }
+  }
+  .itemImg:hover{
+    transform: scale(1.5);
+  }
+}
+
+.itemDescription{
+  display: grid;
+  justify-items: center;
+  gap: 1.5vw;
+  h3{
+    @extend %h3;
+    text-align: center;
+  }
+  p{
+    text-align: center;
+    @extend %p;
+  }
+  .descriptionFlexContainer{
+    span{
+      color: $yellow;
+      font-size: 18px;
+      display: block;
+      text-align: center;
+    }
+    button{
+      @extend %button;
+      margin-top: 1.5vw;
+      &:hover{
+        background-color: grey;
+      }
+    }
+  }
+}
+
+
+
+@media(max-width: 1060px){
+  .productItem{
+    grid-auto-flow: column;
+    gap: 3vw;
+    .itemImg{
+      width: 140px;
+      height: 140px;
+    }
+  }
+  .itemDescription{
+    gap: 0.5vw;
+    display: block;
+    .descriptionFlexContainer{
+      margin:{
+        top: 10px;
+        left:2vw;
+        right: 2vw;
+      };
+      display: flex;
+      justify-content: space-between;
+      button{
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media(max-width: 760px){
+
+
+  .productContainer{
+    .itemDescription{
+      padding: 0 2vw;
+      .descriptionFlexContainer{
+        margin:{
+          left: 5vw;
+          right: 5vw;
+        };
+      }
+    }
+  }
+}
+
+@media(max-width: 480px){
+  .productItem{
+    display: grid;
+    grid-auto-flow: row;
+  }
+}

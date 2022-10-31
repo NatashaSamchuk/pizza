@@ -1,0 +1,65 @@
+.services {
+  background-image: url("../../assets/img/food.png");
+  background-repeat: repeat;
+  min-height: 100vh;
+  padding: 25vh 0 20vh 0;
+  //padding-top: 150px;
+  //padding-bottom: 10vw;
+
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+
+  .servicesText {
+    font-family: 'Raleway', sans-serif;
+    width: 34%;
+    margin: 0 auto;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 2vw;
+    margin-bottom: 4vw;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .servicesContainer {
+    display: grid;
+
+    justify-content: center;
+    grid-template-rows: 310px;
+    column-gap: 55px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 10%;
+  }
+}
+
+@media(min-width: 1000px){
+  .services {
+    .servicesContainer {
+      padding: 0 20%;
+    }
+  }
+}
+
+@media(max-width: 800px){
+  .services {
+    .servicesText {
+      width: 50%;
+    }
+    .servicesContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media(max-width: 480px){
+  .services {
+    .servicesText {
+      width: 65%;
+    }
+  }
+}

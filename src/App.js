@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import {Routes, Route} from "react-router-dom";
+import Header from "./Components/Header/Header";
+// import Home from "./Components/Home/Home";
+import Menu from "./Components/Menu/Menu";
+import ServicesContainer from "./Components/Services/ServicesContainer";
+// import Blog from "./Components/Blog/Blog";
+import About from "./Components/About/About";
+import Contacts from "./Components/Contacts/Contacts";
+import Footer from "./Components/Footer/Footer";
+import HomeContainer from "./Components/Home/HomeContainer";
+import BlogContainer from "./Components/Blog/BlogContainer";
+
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Routes>
+          <Route exact path="/pizza/" element={<HomeContainer/>}/>
+        <Route path="/pizza/home" element={<HomeContainer/>}/>
+        <Route path="/pizza/menu/:path" element={<Menu/>}/>
+        <Route path="/pizza/services" element={<ServicesContainer/>}/>
+        <Route path="/pizza/blog" element={<BlogContainer/>}/>
+        <Route path="/pizza/about" element={<About/>}/>
+        <Route path="/pizza/contact" element={<Contacts/>}/>
+
+      </Routes>
+      <Footer/>
+
     </div>
   );
 }

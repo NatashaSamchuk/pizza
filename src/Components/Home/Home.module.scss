@@ -1,0 +1,115 @@
+
+//colors:
+$black: rgb(22,22,22);
+$yellow: rgb(241,201,23);
+$grey: rgba(176, 176, 176, 0.9);
+$white: rgb(255,255,255);
+
+@mixin fontProp($fs, $fw, $ls, $c){
+  font-size: $fs;
+  font-weight: $fw;
+  letter-spacing: $ls;
+  color: $c;
+  text-align: center;
+}
+@mixin button($c, $b, $bgrd){
+  color: $c;
+  border: $b;
+  background: $bgrd;
+}
+%img1{
+  position: relative;
+  max-width: 400px;
+  z-index: 4;
+}
+%homeSlide{
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+  -webkit-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  z-index: 1;
+}
+%homeSlideAfter{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 2;
+}
+
+.homeSlide {
+  background: url("../../assets/img/bg_3.jpg") center no-repeat;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  @extend %homeSlide;
+  &:after{
+    @extend %homeSlideAfter;
+  }
+}
+
+.slide_textContent {
+  display: grid;
+  align-items: start;
+  max-width: 60%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  h2 {
+    font-family: 'Nothing You Could Do', cursive;
+    margin: 5px;
+    @include fontProp(35px, 400, 3px, $yellow);
+  }
+  h1 {
+    font-family: 'Molengo', sans-serif;
+    text-transform: uppercase;
+    line-height: 4rem;
+    margin: 5px;
+    @include fontProp(45px, 500, 3px, $white);
+  }
+  p {
+    margin: 20px auto;
+    @include fontProp(16px, 400, 1px, $white);
+  }
+}
+
+.slideBtns {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  button{
+    margin: 10px;
+    padding: 15px;
+    font-family: 'Raleway', sans-serif;
+    &:hover{
+      @include button($black, 1px solid $grey, $grey);
+    }
+  }
+}
+.btnOrder {
+  @include button($black, 1px solid $yellow, $yellow);
+}
+.btnView {
+  @include button($white, 1px solid $white, rgba(0,0,0,0));
+}
+
+@media screen and (max-width: 768px) {
+  .slide_textContent {
+    h1{
+      @include fontProp(30px, 400, 2px, $white);
+    }
+    h2{
+      @include fontProp(24px, 400, 2px, $yellow);
+    }
+  }
+}

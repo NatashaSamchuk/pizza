@@ -1,0 +1,12 @@
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+@media(max-width: 1060px) {
+  .productContainer {
+    grid-template-columns: 1fr;
+    gap: 2vw;
+  }
+}
