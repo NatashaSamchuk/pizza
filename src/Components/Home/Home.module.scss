@@ -47,6 +47,7 @@ $white: rgb(255,255,255);
 
 .homeSlide {
   background: url("../../assets/img/bg_3.jpg") center no-repeat;
+  background-size: 100% 100%;
   grid-template-columns: 1fr;
   margin: 0 auto;
   @extend %homeSlide;

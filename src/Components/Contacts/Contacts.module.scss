@@ -17,8 +17,9 @@ $white: rgb(255,255,255);
   background: $bgrd;
 }
 .contact {
+  padding-top: 8vh;
   background-color: black;
-  //max-height: 100vh;
+  min-height: 90vh;
 
   .contact__container {
     display: grid;
@@ -124,6 +125,14 @@ $white: rgb(255,255,255);
     .contact__container {
       display: grid;
       grid-template-columns: 1fr;
+      .contact__form__container{
+        .form__container{
+          padding-bottom: 30px;
+          button{
+            //margin-left: 30px;
+          }
+        }
+      }
     }
   }
 }
